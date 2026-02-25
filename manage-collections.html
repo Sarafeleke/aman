@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Collections - Amanawit Design</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .admin-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(26,26,26,0.9));
+            border: 1px solid #d4af37;
+            border-radius: 10px;
+        }
+        .admin-header h1 {
+            color: #d4af37;
+            font-size: 2rem;
+            margin: 0;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            color: #d4af37;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            background: #1a1a1a;
+            border: 2px solid #333;
+            border-radius: 8px;
+            color: #f4e4bc;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #d4af37;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+        .form-group select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23d4af37' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            padding-right: 40px;
+        }
+        .form-group select option {
+            background: #1a1a1a;
+            color: #f4e4bc;
+            padding: 10px;
+        }
+        .form-group select option:hover {
+            background: #d4af37;
+            color: #000;
+        }
+        .add-collection-form {
+            background: linear-gradient(135deg, rgba(0,0,0,0.9), rgba(26,26,26,0.95));
+            border: 2px solid #d4af37;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
+        }
+        .add-collection-form h2 {
+            color: #d4af37;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .btn {
+            background: linear-gradient(135deg, #d4af37, #c9a227);
+            color: #000;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        .btn:hover {
+            background: linear-gradient(135deg, #c9a227, #b8941f);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .service-card {
+            background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(26,26,26,0.9));
+            border: 1px solid #333;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            border-color: #d4af37;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.1);
+        }
+        .service-card h3 {
+            color: #d4af37;
+            margin-bottom: 10px;
+        }
+        .collections-container {
+            background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(26,26,26,0.9));
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        .collection-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #333;
+            gap: 20px;
+        }
+        .collection-image {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 2px solid #d4af37;
+        }
+        .message {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 600;
+        }
+        .success {
+            background: rgba(76, 175, 80, 0.2);
+            border: 2px solid #4caf50;
+            color: #4caf50;
+        }
+        .error {
+            background: rgba(244, 67, 54, 0.2);
+            border: 2px solid #f44336;
+            color: #f44336;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="img/aman-removebg-preview.png" alt="Amanawit Design" class="logo-img">
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Shop</a></li>
+                <li><a href="manage-collections.html" class="nav-link">Manage</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="admin-container">
+        <div class="admin-header">
+            <h1>Manage Collections</h1>
+            <button class="btn" onclick="logout()" style="float: right; background: rgba(244, 67, 54, 0.8); padding: 8px 15px; font-size: 0.9rem; width: auto; min-width: 80px;">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+        </div>
+
+        <div id="message-container"></div>
+
+        <!-- Services Section -->
+        <div class="services-grid" id="services-grid">
+            <!-- Services will be loaded here -->
+        </div>
+
+        <!-- Add Collection Form -->
+        <div class="add-collection-form" id="add-collection-form" style="display: block;">
+            <h2>Add New Collection</h2>
+            <form id="collection-form">
+                <div class="form-group">
+                    <label for="collection-name">Collection Name</label>
+                    <input type="text" id="collection-name" placeholder="Enter collection name" required>
+                </div>
+                <div class="form-group">
+                    <label for="collection-image">Image</label>
+                    <input type="file" id="collection-image" accept="image/*" required>
+                </div>
+                <div class="form-group">
+                    <label for="collection-description">Description</label>
+                    <textarea id="collection-description" rows="4" placeholder="Enter description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="collection-price">Price (ETB)</label>
+                    <input type="number" id="collection-price" step="0.01" placeholder="Enter price" required>
+                </div>
+                <div class="form-group">
+                    <label for="collection-service">Service Type</label>
+                    <select id="collection-service" required>
+                        <option value="">Select a service</option>
+                        <option value="1">Custom Habesha Dress Design</option>
+                        <option value="2">Wedding and Mels Designs</option>
+                        <option value="3">Holiday Designs</option>
+                        <option value="4">Special Event Designs</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn">Add Collection</button>
+            </form>
+        </div>
+
+        <!-- Collections Display -->
+        <div id="collections-display"></div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:8000/api';
+        
+        // Check authentication
+        function checkAuth() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            if (isLoggedIn !== 'true') {
+                window.location.href = 'login.html';
+                return false;
+            }
+            return true;
+        }
+
+        // Logout function
+        function logout() {
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('username');
+            showMessage('Logged out successfully!', 'success');
+            setTimeout(() => {
+                window.location.href = 'login.html';
+            }, 1500);
+        }
+        
+        // Load services
+        async function loadServices() {
+            try {
+                console.log('Loading services from:', `${API_BASE}/services/`);
+                const response = await fetch(`${API_BASE}/services/`);
+                console.log('Response status:', response.status);
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                console.log('Services data:', data);
+                
+                if (data.services && data.services.length > 0) {
+                    console.log('Populating dropdown with', data.services.length, 'services');
+                    displayServices(data.services);
+                } else {
+                    console.error('No services found in response');
+                    showMessage('No services found. Please check backend.', 'error');
+                }
+            } catch (error) {
+                console.error('Error loading services:', error);
+                showMessage('Error loading services: ' + error.message, 'error');
+            }
+        }
+
+        // Display services
+        function displayServices(services) {
+            console.log('displayServices called with', services.length, 'services');
+            
+            const grid = document.getElementById('services-grid');
+            const serviceSelect = document.getElementById('collection-service');
+            
+            console.log('Grid element:', grid);
+            console.log('Service select element:', serviceSelect);
+            
+            // Display services in grid
+            if (grid) {
+                grid.innerHTML = services.map(service => `
+                    <div class="service-card">
+                        <h3>${service.name}</h3>
+                        <p>${service.description}</p>
+                        <button class="btn" onclick="showServiceCollections(${service.id}, '${service.name}')">
+                            View Collections
+                        </button>
+                    </div>
+                `).join('');
+            }
+            
+            // Populate service dropdown
+            if (serviceSelect) {
+                const options = '<option value="">Select a service</option>' + 
+                    services.map(service => `
+                        <option value="${service.id}">${service.name}</option>
+                    `).join('');
+                console.log('Setting dropdown options:', options);
+                serviceSelect.innerHTML = options;
+                console.log('Dropdown populated successfully');
+            } else {
+                console.error('Service select element not found!');
+            }
+        }
+
+        // Show collections for specific service
+        function showServiceCollections(serviceId, serviceName) {
+            loadCollections(serviceId);
+            document.getElementById('collection-service').value = serviceId;
+        }
+
+        // Load collections for a service
+        async function loadCollections(serviceId) {
+            try {
+                const response = await fetch(`${API_BASE}/services/${serviceId}/collections/`);
+                const data = await response.json();
+                displayCollections(data.collections, data.service);
+            } catch (error) {
+                showMessage('Error loading collections: ' + error.message, 'error');
+            }
+        }
+
+        // Display collections
+        function displayCollections(collections, service) {
+            const display = document.getElementById('collections-display');
+            display.innerHTML = `
+                <div class="collections-container">
+                    <h2>${service.name} Collections</h2>
+                    <button class="btn" onclick="showAddForm(${service.id}, '${service.name}')" style="margin-bottom: 20px;">
+                        <i class="fas fa-plus"></i> Add New Collection
+                    </button>
+                    ${collections.map(collection => `
+                        <div class="collection-item">
+                            <img src="${collection.image_url}" alt="${collection.name}" class="collection-image">
+                            <div class="collection-info">
+                                <div class="collection-name">${collection.name}</div>
+                                <div class="collection-price">ETB ${collection.price}</div>
+                                <button class="btn" onclick="editCollection(${collection.id})" style="margin-right: 10px;">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="btn" onclick="deleteCollection(${collection.id})" style="margin-left: auto;">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        // Add collection
+        document.getElementById('collection-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            console.log('Form submitted!');
+            
+            const serviceId = document.getElementById('collection-service').value;
+            const name = document.getElementById('collection-name').value;
+            const description = document.getElementById('collection-description').value;
+            const price = document.getElementById('collection-price').value;
+            const imageFile = document.getElementById('collection-image').files[0];
+            
+            console.log('Form values:', { serviceId, name, description, price, imageFile });
+            
+            // Validate required fields
+            if (!serviceId || !name || !description || !price) {
+                console.error('Validation failed:', { serviceId, name, description, price });
+                showMessage('Please fill in all required fields including service type', 'error');
+                return;
+            }
+
+            try {
+                const formData = new FormData();
+                formData.append('name', name);
+                formData.append('description', description);
+                formData.append('price', price);
+                if (imageFile) {
+                    formData.append('image', imageFile);
+                }
+                
+                console.log('Sending to:', `${API_BASE}/services/${serviceId}/collections/add/`);
+
+                const response = await fetch(`${API_BASE}/services/${serviceId}/collections/add/`, {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                console.log('Response status:', response.status);
+
+                const result = await response.json();
+                console.log('Response result:', result);
+                
+                if (result.success) {
+                    showMessage('Collection added successfully!', 'success');
+                    document.getElementById('collection-form').reset();
+                    loadCollections(serviceId);
+                } else {
+                    showMessage('Error: ' + result.error, 'error');
+                }
+            } catch (error) {
+                console.error('Fetch error:', error);
+                showMessage('Error adding collection: ' + error.message, 'error');
+            }
+        });
+
+        // Edit collection
+        async function editCollection(collectionId) {
+            try {
+                const response = await fetch(`${API_BASE}/collections/${collectionId}/update/`);
+                const result = await response.json();
+                
+                if (result.success) {
+                    // Populate form with existing data
+                    document.getElementById('collection-name').value = result.collection.name;
+                    document.getElementById('collection-description').value = result.collection.description;
+                    document.getElementById('collection-price').value = result.collection.price;
+                    document.getElementById('collection-service').value = result.collection.service_id;
+                    
+                    // Show form
+                    showAddForm(result.collection.service_id, 'Edit Collection');
+                    
+                    showMessage('Collection loaded for editing', 'success');
+                } else {
+                    showMessage('Error: ' + result.error, 'error');
+                }
+            } catch (error) {
+                showMessage('Error loading collection: ' + error.message, 'error');
+            }
+        }
+
+        // Delete collection
+        async function deleteCollection(collectionId) {
+            if (confirm('Are you sure you want to delete this collection?')) {
+                try {
+                    const response = await fetch(`${API_BASE}/collections/${collectionId}/delete/`, {
+                        method: 'DELETE'
+                    });
+
+                    const result = await response.json();
+                    
+                    if (result.success) {
+                        showMessage('Collection deleted successfully!', 'success');
+                        // Reload collections
+                        const serviceId = document.getElementById('service-select').value;
+                        if (serviceId) {
+                            loadCollections(serviceId);
+                        } else {
+                            showMessage('Please select a service first', 'error');
+                        }
+                    } else {
+                        showMessage('Error: ' + result.error, 'error');
+                    }
+            } catch (error) {
+                showMessage('Error deleting collection: ' + error.message, 'error');
+            }
+        }
+
+        // Show message
+        function showMessage(message, type) {
+            const container = document.getElementById('message-container');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${type}`;
+            messageDiv.textContent = message;
+            container.appendChild(messageDiv);
+            
+            // Remove message after 5 seconds
+            setTimeout(() => {
+                messageDiv.remove();
+            }, 5000);
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            if (checkAuth()) {
+                loadServices();
+            }
+        });
+    </script>
+</body>
+</html>

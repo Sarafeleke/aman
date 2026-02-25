@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amanawit Design - Timeless Culture. Modern Grace.</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Cinematic Intro -->
+
+    <div id="intro" class="intro-screen">
+        <div class="particles-container"></div>
+        <div class="intro-content">
+            <div class="pattern-frame">
+                <img src="img/aman-removebg-preview.png" alt="Amanawit Design" class="intro-logo">
+            </div>
+            <p class="intro-subtitle">Unparalell, Unforgetable and Undeniable</p>
+        </div>
+        
+        <!-- Animated Text on Sides -->
+        <div class="side-text left-text">Amanawit</div>
+        <div class="side-text right-text">Habesha Design</div>
+        
+        <button class="skip-intro" onclick="skipIntro()">Skip Intro</button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="img/aman-removebg-preview.png" alt="Amanawit Design" class="logo-img">
+            </div>
+          <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Shop</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="http://localhost:8000/login/" class="nav-link" title="Admin Login"><i class="fas fa-lock"></i></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="hero-slide active">
+                <img src="img/habesha 4.png" alt="Traditional Habesha Dress">
+            </div>
+            <div class="hero-slide">
+                <img src="img/habesha 2.jpg" alt="Modern Habesha Design">
+            </div>
+            <div class="hero-slide">
+                <img src="img/habesha 3.jpg" alt="Wedding Collection">
+            </div>
+                 <div class="hero-slide">
+                <img src="img/habesha 6.png" style="width: 100%;height: 100%;" alt="Wedding Collection">
+            </div>
+        </div>
+        <div class="hero-content">
+            <p class="hero-title" style="font-size: 60pt;font-family: 'Times New Roman', Times, serif;" > Amanawit Design</p>
+            <p class="hero-subtitle">Experience the timeless beauty of traditional Ethiopian fashion</p>
+            <button class="cta-button" onclick="window.location.href='services.html'">Explore Collection</button>
+        </div>
+    </section>
+
+    <!-- Featured Collection -->
+    <section class="featured">
+        <h2 class="section-title">Featured Collection</h2>
+        <div class="featured-grid">
+            <div class="featured-item">
+                <div class="featured-image">
+                    <img src="img/habesha 1.jpg" alt="Traditional Habesha Dress">
+                </div>
+                <h3>Traditional Habesha Kemis</h3>
+                <p>Elegant hand-woven traditional dress with intricate embroidery</p>
+            </div>
+            <div class="featured-item">
+                <div class="featured-image">
+                    <img src="img/habesha 2.jpg" alt="Modern Habesha Design">
+                </div>
+                <h3>Modern Habesha Design</h3>
+                <p>Contemporary interpretation of classic Ethiopian fashion</p>
+            </div>
+            <div class="featured-item">
+                <div class="featured-image">
+                    <img src="img/habesha 3.jpg" alt="Wedding Collection">
+                </div>
+                <h3>Wedding Collection</h3>
+                <p>Luxurious bridal wear for your special day</p>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- Footer -->
+     <footer>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Amanawit Design</h3>
+                    <p>Experience the timeless beauty of traditional Ethiopian fashion with our exquisite collection of Habesha kemis and modern designs.</p>
+                    <div class="social-links">
+                        <!-- Telegram -->
+                        <a href="https://t.me/amani_design_19" target="_blank" class="social-icon">
+                            <i class="fab fa-telegram-plane"></i>
+                        </a>
+
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/amanawitdesign" target="_blank" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+
+                        <!-- TikTok -->
+                        <a href="https://www.tiktok.com/@amanawit_design" target="_blank" class="social-icon">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Our Shop</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div class="footer-contact">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        <address>  <p>Merkato Addis ketema building 4rth floor no 420<br>Addis Ababa, Ethiopia</p></address>
+                    </div>
+                    <div class="footer-contact">
+                        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.12 0 .24-.02.35-.06a.5.5 0 00.28-.22l.85-1.69c.08-.16.05-.34-.06-.5-.14-.46-.44-.85-.83-1.15-1.11-.88-2.54-1.39-4.04-1.39-2.21 0-4.25.86-5.77 2.29-1.51 1.43-2.37 3.47-2.37 5.68 0 1.5.51 2.93 1.39 4.04.3.39.69.69 1.15.83.16.11.34.14.5.06l1.69-.85a.5.5 0 00.22-.28c.04-.11.06-.23.06-.35.01-1.25-.2-2.45-.57-3.57-.12-.35-.03-.75.24-1.02l2.2-2.2c-1.45-2.83-3.76-5.14-6.59-6.59l-2.2 2.2c-.27.27-.67.36-1.02.24-1.12-.37-2.33-.57-3.57-.57-.12 0-.24.02-.35.06a.5.5 0 00-.28.22l-.85 1.69c-.08.16-.05.34.06.5.14.46.44.85.83 1.15 1.11.88 2.54 1.39 4.04 1.39 2.21 0 4.25-.86 5.77-2.29 1.51-1.43 2.37-3.47 2.37-5.68 0-1.5-.51-2.93-1.39-4.04-.3-.39-.69-.69-1.15-.83-.16-.11-.34-.14-.5-.06l-1.69.85a.5.5 0 00-.22.28c-.04.11-.06.23-.06.35-.01 1.25.2 2.45.57 3.57.12.35.03.75-.24 1.02l-2.2 2.2z"/></svg>
+                        <span>+251 953 946 968</span>
+                    </div>
+                    <div class="footer-contact">
+                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        <span>amanawitdesign19@gmail.com</span>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Business Hours</h3>
+                    <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                    <p>Saturday: 10:00 AM - 4:00 PM</p>
+                    <p>Sunday: Closed</p>
+                    <p>For appointments, please call ahead</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy;  Developed by Amin designs. All rights reserved. 2026</p>
+        </div>
+    </footer>
+
+    <script>
+        // Hero Slideshow
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.hero-slide');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        function startSlideshow() {
+            setInterval(nextSlide, 4000); // Change slide every 4 seconds
+        }
+
+        // Skip Intro Function
+        function skipIntro() {
+            const intro = document.getElementById('intro');
+            const mainContent = document.querySelector('body > *:not(#intro)');
+            
+            if (intro) {
+                // Fade out intro
+                intro.style.transition = 'opacity 1s ease, transform 1s ease';
+                intro.style.opacity = '0';
+                intro.style.transform = 'scale(0.95)';
+                
+                setTimeout(() => {
+                    intro.style.display = 'none';
+                    
+                    // Fade in main content
+                    if (mainContent) {
+                        mainContent.style.opacity = '0';
+                        mainContent.style.transition = 'opacity 0.8s ease';
+                        setTimeout(() => {
+                            mainContent.style.opacity = '1';
+                        }, 100);
+                    }
+                }, 1000);
+            }
+        }
+
+        // Generate Particles
+        function generateParticles() {
+            const particlesContainer = document.querySelector('.particles-container');
+            if (particlesContainer) {
+                for (let i = 0; i < 50; i++) {
+                    const particle = document.createElement('div');
+                    particle.className = 'particle';
+                    particle.style.left = Math.random() * 100 + '%';
+                    particle.style.animationDelay = Math.random() * 8 + 's';
+                    particle.style.animationDuration = (Math.random() * 3 + 5) + 's';
+                    particlesContainer.appendChild(particle);
+                }
+            }
+        }
+
+        // Hamburger Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            // Start hero slideshow
+            if (slides.length > 0) {
+                startSlideshow();
+            }
+            
+            // Generate particles for intro
+            generateParticles();
+            
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', () => {
+                    navToggle.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        navToggle.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    });
+                });
+            }
+        });
+
+        setTimeout(() => {
+            skipIntro();
+        }, 5000);
+    </script>
+</body>
+</html>

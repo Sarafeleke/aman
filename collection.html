@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amanawit Design - Collection</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="img/aman-removebg-preview.png" alt="Amanawit Design" class="logo-img">
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Shop</a></li>
+                <li><a href="collection.html" class="nav-link active">Collection</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Our Collection</h1>
+        <p>Discover our complete range of traditional and modern Ethiopian fashion</p>
+    </section>
+
+    <!-- Collection Grid -->
+    <section class="collection-section">
+        <div class="container">
+            <div class="collection-grid">
+                <!-- Item 1 -->
+                <div class="collection-card" onclick="goToOrder('Traditional Red Habesha', '16,000 ETB', 'img/habesha 8.jpg', 'Classic Habesha kemis with intricate tibeb embroidery. Perfect for weddings and cultural events.')">
+                    <div class="collection-image">
+                        <img src="img/habesha 8.jpg" alt="Traditional Red Habesha">
+                    </div>
+                    <h3>Traditional  Habesha</h3>
+                    <p>Classic Habesha kemis with intricate tibeb embroidery. Perfect for weddings and cultural events.</p>
+                    <div class="price-button" onclick="event.stopPropagation(); goToOrder('Traditional Red Habesha', '16,000 ETB', 'img/habesha 8.jpg', 'Classic Habesha kemis with intricate tibeb embroidery. Perfect for weddings and cultural events.')">16,000 ETB</div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="collection-card" onclick="goToOrder('Modern Golden Design', '14,000 ETB', 'img/habesha 9.jpg', 'Contemporary interpretation with modern Golden fabric and stylish silhouette. Elegant and sophisticated.')">
+                    <div class="collection-image">
+                        <img src="img/habesha 9.jpg" alt="Modern Blue Design">
+                    </div>
+                    <h3>Modern Golden Design</h3>
+                    <p>Contemporary interpretation with modern Golden fabric and stylish silhouette. Elegant and sophisticated.</p>
+                    <div class="price-button" onclick="event.stopPropagation(); goToOrder('Modern Golden Design', '14,000 ETB', 'img/habesha 9.jpg', 'Contemporary interpretation with modern Golden fabric and stylish silhouette. Elegant and sophisticated.')">14,000 ETB</div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="collection-card" onclick="goToOrder('Wedding Blue Design', '21,000 ETB', 'img/habesha 10.jpg', 'Luxurious Blue fabric with detailed embroidery. Premium choice for special occasions.')">
+                    <div class="collection-image">
+                        <img src="img/habesha 10.jpg" alt="Wedding Gold Collection">
+                    </div>
+                    <h3>Wedding Blue Design</h3>
+                    <p>Luxurious Blue fabric with detailed embroidery. Premium choice for special occasions.</p>
+                    <div class="price-button" onclick="event.stopPropagation(); goToOrder('Wedding Blue Design', '21,000 ETB', 'img/habesha 10.jpg', 'Luxurious Blue fabric with detailed embroidery. Premium choice for special occasions.')">21,000 ETB</div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="collection-card" onclick="goToOrder('Cultural Green Design', '$520', 'img/habesha 4.png', 'Traditional green Habesha with cultural patterns. Celebrates Ethiopian heritage.')">
+                    <div class="collection-image">
+                        <img src="img/habesha 4.png" alt="Cultural Green Design">
+                    </div>
+                    <h3>Cultural Green Design</h3>
+                    <p>Traditional green Habesha with cultural patterns. Celebrates Ethiopian heritage.</p>
+                    <div class="price-button" onclick="event.stopPropagation(); goToOrder('Cultural Green Design', '$520', 'img/habesha 4.png', 'Traditional green Habesha with cultural patterns. Celebrates Ethiopian heritage.')">$520</div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="collection-card" onclick="goToOrder('Elegant Purple Design', '$480', 'img/habesha 6.png', 'Purple fabric with elegant design. Perfect for formal events and celebrations.')">
+                    <div class="collection-image">
+                        <img src="img/habesha 6.png" alt="Elegant Purple Design">
+                    </div>
+                    <h3>Elegant Purple Design</h3>
+                    <p>Purple fabric with elegant design. Perfect for formal events and celebrations.</p>
+                    <div class="price-button" onclick="event.stopPropagation(); goToOrder('Elegant Purple Design', '$480', 'img/habesha 6.png', 'Purple fabric with elegant design. Perfect for formal events and celebrations.')">$480</div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="collection-card" onclick="goToOrder('Casual Orange Design', '$320', 'img/habesha 5.jpg', 'Comfortable orange Habesha for casual wear. Modern yet traditional styling.')">
+                    <div class="collection-image">
+                        <img src="img/habesha 5.jpg" alt="Casual Orange Design">
+                    </div>
+                    <h3>Casual Orange Design</h3>
+                    <p>Comfortable orange Habesha for casual wear. Modern yet traditional styling.</p>
+                    <div class="price-button" onclick="event.stopPropagation(); goToOrder('Casual Orange Design', '$320', 'img/habesha 5.jpg', 'Comfortable orange Habesha for casual wear. Modern yet traditional styling.')">$320</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Find Your Perfect Style</h2>
+        <p>Visit our shop to see the complete collection and get custom fitting</p>
+        <button class="cta-button" onclick="window.location.href='contact.html'">Contact Us</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Amanawit Design</h3>
+                    <p>Experience the timeless beauty of traditional Ethiopian fashion with our exquisite collection of Habesha kemis and modern designs.</p>
+                    <div class="social-links">
+                        <!-- Telegram -->
+                        <a href="https://t.me/amani_design_19" target="_blank" class="social-icon">
+                            <i class="fab fa-telegram-plane"></i>
+                        </a>
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/amanawitdesign" target="_blank" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <!-- TikTok -->
+                        <a href="https://www.tiktok.com/@amanawit_design" target="_blank" class="social-icon">
+                            <i class="fab fa-tiktok"></i>
+                         </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Our Shop</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div class="footer-contact">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        <address> <p>Merkato Addis ketema building 4rth floor no 420<br>Addis Ababa, Ethiopia</p></address>
+                    </div>
+                    <div class="footer-contact">
+                        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.12 0 .24-.02.35-.06a.5.5 0 00.28-.22l.85-1.69c.08-.16.05-.34-.06-.5-.14-.46-.44-.85-.83-1.15-1.11-.88-2.54-1.39-4.04-1.39-2.21 0-4.25.86-5.77 2.29-1.51 1.43-2.37 3.47-2.37 5.68 0 1.5.51 2.93 1.39 4.04.3.39.69.69 1.15.83.16.11.34.14.5.06l1.69-.85a.5.5 0 00-.22.28c.04-.11.06-.23.06-.35.01-1.25-.2-2.45-.57-3.57-.12-.35-.03-.75.24-1.02l2.2-2.2c-1.45-2.83-3.76-5.14-6.59-6.59l-2.2 2.2c-.27.27-.67.36-1.02.24-1.12-.37-2.33-.57-3.57-.57-.12 0-.24.02-.35.06a.5.5 0 00-.28.22l-.85 1.69c-.08.16-.05.34.06.5.14.46.44.85.83 1.15 1.11.88 2.54 1.39 4.04 1.39 2.21 0 4.25-.86 5.77-2.29 1.51-1.43 2.37-3.47 2.37-5.68 0-1.5-.51-2.93-1.39-4.04-.3-.39-.69-.69-1.15-.83-.16-.11-.34-.14-.5-.06l-1.69.85a.5.5 0 00-.22.28c.04-.11.06-.23.06-.35.01 1.25.2 2.45.57 3.57.12.35.03.75-.24 1.02l-2.2 2.2z"/></svg>
+                        <span>+251 953 946 968</span>
+                    </div>
+                    <div class="footer-contact">
+                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        <span>amanawitdesign19@gmail.com</span>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Business Hours</h3>
+                    <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                    <p>Saturday: 10:00 AM - 4:00 PM</p>
+                    <p>Sunday: Closed</p>
+                    <p>For appointments, please call ahead</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; Developed by Amin designs. All rights reserved. 2026</p>
+        </div>
+    </footer>
+
+    <script>
+        // Go to Order Form Function
+        function goToOrder(name, price, image, description) {
+            const params = new URLSearchParams({
+                name: name,
+                price: price,
+                image: image,
+                description: description
+            });
+            window.location.href = `order.html?${params.toString()}`;
+        }
+
+        // Hamburger Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', () => {
+                    navToggle.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        navToggle.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

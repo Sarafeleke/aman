@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amanawit Design - Order Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="img/aman-removebg-preview.png" alt="Amanawit Design" class="logo-img">
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Shop</a></li>
+             <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Order Form</h1>
+        <p>Complete your order details below</p>
+    </section>
+
+    <!-- Order Form Section -->
+    <section class="order-form-section">
+        <div class="container">
+            <div class="order-form-grid">
+                <!-- Product Details -->
+                <div class="product-details">
+                    <h2>Product Details</h2>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img id="order-image" src="img/habesha 1.jpg" alt="Product Image">
+                        </div>
+                        <div class="product-info">
+                            <h3 id="order-name">Traditional Red Habesha</h3>
+                            <div class="price" id="order-price">$450</div>
+                            <p id="order-description">Classic red Habesha kemis with intricate tibeb embroidery. Perfect for weddings and cultural events.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Form -->
+                <div class="order-form">
+                    <h2>Customer Information</h2>
+                    <form id="orderForm">
+                        <div class="form-group">
+                            <label for="customer-name">Full Name *</label>
+                            <input type="text" id="customer-name" name="customer-name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="customer-phone">Phone Number *</label>
+                            <input type="tel" id="customer-phone" name="customer-phone" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="delivery-place">Delivery Address *</label>
+                            <textarea id="delivery-place" name="delivery-place" rows="3" required placeholder="Enter your complete delivery address"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="size">Size *</label>
+                            <select id="size" name="size" required>
+                                <option value="">Select Size</option>
+                                <option value="xs">Extra Small (XS)</option>
+                                <option value="s">Small (S)</option>
+                                <option value="m">Medium (M)</option>
+                                <option value="l">Large (L)</option>
+                                <option value="xl">Extra Large (XL)</option>
+                                <option value="custom">Custom Size</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="special-notes">Special Instructions</label>
+                            <textarea id="special-notes" name="special-notes" rows="3" placeholder="Any special requests or measurements for custom sizing"></textarea>
+                        </div>
+
+                        <h3>Payment Information</h3>
+                        <div class="payment-options">
+                            <div class="payment-info">
+                                <p><strong>Payment Options:</strong></p>
+                                <p>• <strong>Telebirr:</strong> 0953946968</p>
+                                <p>• <strong>Account:</strong> 1000434662471</p>
+                                <p style="color: #E1BA66; font-weight: 500; margin-top: 10px; padding: 8px; border-radius: 4px; background: rgba(225, 184, 76, 0.1);">
+                                    <strong>💰 Payment Required:</strong> Please pay at least half price to confirm your order. Full payment preferred.
+                                </p>
+                                <hr style="margin: 10px 0;">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="payment-method">Payment Method *</label>
+                                <select id="payment-method" name="payment-method" required>
+                                    <option value="">Select Payment Method</option>
+                                    <option value="telebirr">Telebirr</option>
+                                    <option value="account">Account</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group" id="telebirr-details" style="display: none;">
+                                <label for="telebirr-number">Telebirr Number *</label>
+                                <input type="text" id="telebirr-number" name="telebirr-number" value="0953946968" readonly style="cursor: not-allowed;">
+                                <small>Send payment to: 0953946968</small>
+                            </div>
+                            
+                            <div class="form-group" id="account-details" style="display: none;">
+                                <label for="account-number">Account Number *</label>
+                                <input type="text" id="account-number" name="account-number" value="1000434662471" readonly style="cursor: not-allowed;">
+                                <small>Account Number: 1000434662471</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="payment-screenshot">Payment Screenshot</label>
+                                <input type="file" id="payment-screenshot" name="payment-screenshot" accept="image/*" onchange="previewPaymentScreenshot(event)">
+                                <small>Please upload a screenshot of your payment confirmation</small>
+                                <div id="screenshot-preview" style="margin-top: 10px; display: none;">
+                                    <img id="screenshot-img" style="max-width: 200px; max-height: 200px; border: 1px solid #ddd; border-radius: 4px;">
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn-secondary" onclick="window.history.back()">Back</button>
+                            <button type="submit" class="btn-primary">Place Order</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Message -->
+    <div id="success-message" style="display: none; margin: 20px auto; padding: 20px; background: linear-gradient(135deg, #E1BA66, #B89452); border-radius: 8px; text-align: center; max-width: 500px; border: 2px solid #F0D9A0;">
+        <button onclick="window.location.href='index.html'" style="margin-bottom: 15px; padding: 10px 20px; background: #F0D9A0; color: #ffffff; border: none; border-radius: 4px; cursor: pointer; font-weight: 500;">Continue Shopping</button>
+        <h3 style="color: #ffffff; margin: 0 0 10px 0;">🎉 Order Placed Successfully!</h3>
+        <p style="margin: 0 0 10px 0; color: #ffffff;">Thank you for your order. We will contact you soon to confirm your order details.</p>
+        <div style="margin-top: 15px;">
+            <strong style="color: #ffffff;">Order Summary:</strong>
+            <div style="background: rgba(255, 255, 255, 0.1); padding: 10px; border-radius: 4px; margin-top: 10px;">
+                <p style="color: #ffffff;"><strong>Product:</strong> <span id="success-product"></span></p>
+                <p style="color: #ffffff;"><strong>Price:</strong> <span id="success-price"></span></p>
+                <p style="color: #ffffff;"><strong>Customer:</strong> <span id="success-customer"></span></p>
+                <p style="color: #ffffff;"><strong>Phone:</strong> <span id="success-phone"></span></p>
+                <p style="color: #ffffff;"><strong>Delivery:</strong> <span id="success-delivery"></span></p>
+                <p style="color: #ffffff;"><strong>Payment Method:</strong> <span id="success-payment"></span></p>
+            </div>
+        </div>
+
+    <script>
+        // Get product details from URL parameters
+        function getProductDetails() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const name = urlParams.get('name') || 'Traditional Red Habesha';
+            const price = urlParams.get('price') || '$450';
+            const image = urlParams.get('image') || 'img/habesha 1.jpg';
+            const description = urlParams.get('description') || 'Classic red Habesha kemis with intricate tibeb embroidery. Perfect for weddings and cultural events.';
+
+            document.getElementById('order-name').textContent = name;
+            document.getElementById('order-price').textContent = price;
+            document.getElementById('order-image').src = image;
+            document.getElementById('order-image').alt = name;
+            document.getElementById('order-description').textContent = description;
+        }
+
+        // Handle payment method selection
+        document.getElementById('payment-method').addEventListener('change', function() {
+            const telebirrDetails = document.getElementById('telebirr-details');
+            const accountDetails = document.getElementById('account-details');
+            
+            // Hide both sections first
+            telebirrDetails.style.display = 'none';
+            accountDetails.style.display = 'none';
+            
+            // Show relevant section based on selection
+            if (this.value === 'telebirr') {
+                telebirrDetails.style.display = 'block';
+            } else if (this.value === 'account') {
+                accountDetails.style.display = 'block';
+            }
+        });
+
+        // Preview payment screenshot
+        function previewPaymentScreenshot(event) {
+            const file = event.target.files[0];
+            const preview = document.getElementById('screenshot-preview');
+            const img = document.getElementById('screenshot-img');
+            
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    img.src = e.target.result;
+                    preview.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            } else {
+                preview.style.display = 'none';
+            }
+        }
+
+        // Handle form submission
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            
+            // Handle payment screenshot
+            const screenshotFile = document.getElementById('payment-screenshot').files[0];
+            if (screenshotFile) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    // Send order with screenshot
+                    sendOrderWithScreenshot(formData, e.target.result);
+                };
+                reader.readAsDataURL(screenshotFile);
+            } else {
+                // Send order without screenshot
+                sendOrderWithScreenshot(formData, null);
+            }
+        });
+
+        function sendOrderWithScreenshot(formData, screenshotData) {
+            const orderData = {
+                customerName: formData.get('customer-name'),
+                phone: formData.get('customer-phone'),
+                deliveryAddress: formData.get('delivery-place'),
+                size: formData.get('size'),
+                specialNotes: formData.get('special-notes'),
+                productName: document.getElementById('order-name').textContent,
+                price: document.getElementById('order-price').textContent,
+                productImage: document.getElementById('order-image').src,
+                paymentMethod: formData.get('payment-method'),
+                telebirrNumber: formData.get('telebirr-number'),
+                accountNumber: formData.get('account-number'),
+                paymentScreenshot: screenshotData,
+                timestamp: new Date().toLocaleString()
+            };
+
+            // Send order to Telegram bot
+            fetch('http://127.0.0.1:8000/api/send-order-telegram/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(orderData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Hide the form and show success message
+                    document.getElementById('orderForm').style.display = 'none';
+                    
+                    // Update success message details
+                    document.getElementById('success-product').textContent = orderData.productName;
+                    document.getElementById('success-price').textContent = orderData.price;
+                    document.getElementById('success-customer').textContent = orderData.customerName;
+                    document.getElementById('success-phone').textContent = orderData.phone;
+                    document.getElementById('success-delivery').textContent = orderData.deliveryAddress;
+                    document.getElementById('success-payment').textContent = orderData.paymentMethod;
+                    
+                    // Show success message
+                    document.getElementById('success-message').style.display = 'block';
+                    
+                    // Scroll to success message
+                    document.getElementById('success-message').scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    alert('There was an error sending your order. Please try again or contact us directly.');
+                    console.error('Telegram error:', data.error);
+                }
+            })
+            .catch(error => {
+                // Fallback to local confirmation if Telegram fails
+                console.error('Network error:', error);
+                
+                // Hide the form and show success message
+                document.getElementById('orderForm').style.display = 'none';
+                
+                // Update success message details
+                document.getElementById('success-product').textContent = orderData.productName;
+                document.getElementById('success-price').textContent = orderData.price;
+                document.getElementById('success-customer').textContent = orderData.customerName;
+                document.getElementById('success-phone').textContent = orderData.phone;
+                document.getElementById('success-delivery').textContent = orderData.deliveryAddress;
+                document.getElementById('success-payment').textContent = orderData.paymentMethod;
+                
+                // Show success message
+                document.getElementById('success-message').style.display = 'block';
+                
+                // Scroll to success message
+                document.getElementById('success-message').scrollIntoView({ behavior: 'smooth' });
+            });
+        }
+
+        // Hamburger Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            getProductDetails();
+            
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', () => {
+                    navToggle.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        navToggle.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
