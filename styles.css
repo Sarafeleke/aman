@@ -997,6 +997,12 @@ h1, h2, h3 {
         min-height: 44px !important;
     }
     
+    /* Override inline styles */
+    .hero-title[style] {
+        font-size: 2rem !important;
+        font-family: 'Playfair Display', serif !important;
+    }
+    
     /* Intro screen mobile */
     .intro-screen {
         padding: 20px !important;
@@ -1049,6 +1055,12 @@ h1, h2, h3 {
         padding: 10px 20px !important;
         font-size: 0.8rem !important;
         min-height: 40px !important;
+    }
+    
+    /* Override inline styles for small mobile */
+    .hero-title[style] {
+        font-size: 1.5rem !important;
+        font-family: 'Playfair Display', serif !important;
     }
     
     .intro-logo {
@@ -1275,6 +1287,7 @@ h1, h2, h3 {
     
     .featured-image img {
         height: 220px;
+          object-fit: cover !important;
     }
     
     .featured-item h3 {
@@ -1418,6 +1431,7 @@ h1, h2, h3 {
     .featured-item:hover .featured-image img {
         transform: scale(1.05);
         filter: brightness(1.1);
+          object-fit: cover !important;
     }
     
     .featured-item h3 {
